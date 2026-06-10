@@ -40,10 +40,12 @@ function showPopup(bool) {
 // Dynamic Header Shrink Loop
 window.addEventListener("scroll", function () {
   const header = document.getElementById("main-header");
+  const container = document.getElementById("container");
   
   // Trigger shrink state if page is scrolled down more than 50 pixels
-  if (window.scrollY > 150) {
+  if (window.scrollY > 100) {
     header.classList.add("shrunk");
+    container.classList.add("shrunk");
   } else {
     header.classList.remove("shrunk");
   }

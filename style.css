@@ -122,6 +122,9 @@ header.shrunk .topmenu {
   margin: 0 auto;
   padding: 2rem 1.5rem;
 }
+.main-container .shrunk {
+  padding-top: 1rem;
+}
 
 section {
   padding: 1rem 0 3rem;
