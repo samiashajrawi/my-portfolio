@@ -11,29 +11,57 @@
   --primary-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
-
-html {
-  scroll-behavior: smooth;
-}
-
+/* Fix Body padding to prevent content from abruptly jumping under the fixed header */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
-  margin: 0;
-  background-color: var(--bg-light);
-  color: var(--text-main);
-  line-height: 1.6;
+  padding-top: 132px; /* Set this roughly equal to your original header height */
 }
 
-/* Navigation Bar */
+/* Sticky Header Container */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out; /* Handles the fluid shrinking morph */
+}
+
+/* Original Main Header Layout State */
 #home {
   display: flex;
   background-color: var(--bg-dark);
   min-height: 100px;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 4%;
+  padding: 1.5rem 4%; /* Generous original top/bottom padding */
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- THE SHRUNK MINI STATE --- */
+
+/* Thinner navigation bar container when scrolled */
+header.shrunk #home {
+  min-height: 60px; /* Thinner bounding track */
+  padding: 0.5rem 4%; /* Squeezes internal vertical whitespace */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Conditionally hide secondary text elements in the profile name to make it thinner */
+header.shrunk .profile_name .contact_info {
+  display: none; /* Collapses text contact details to clear vertical height */
+}
+
+/* Keep the main title block visible but slightly compact */
+header.shrunk .profile_name {
+  font-size: 1.1rem;
+}
+
+/* Slightly decrease spacing of the navigation menus to fit the mini bar */
+header.shrunk .topmenu {
+  font-size: 0.95rem;
+  padding: 0.25rem 0.75rem;
 }
 
 .profile_name {
