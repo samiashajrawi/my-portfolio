@@ -42,7 +42,7 @@ window.addEventListener("scroll", function () {
   const header = document.getElementById("main-header");
   
   // Trigger shrink state if page is scrolled down more than 50 pixels
-  if (window.scrollY > 50) {
+  if (window.scrollY > 150) {
     header.classList.add("shrunk");
   } else {
     header.classList.remove("shrunk");

@@ -11,6 +11,9 @@
   --primary-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
+html {
+  scroll-behavior: smooth;
+}
 /* Fix Body padding to prevent content from abruptly jumping under the fixed header */
 body {
   padding-top: 132px; /* Set this roughly equal to your original header height */
@@ -121,14 +124,14 @@ header.shrunk .topmenu {
 }
 
 section {
-  padding: 3rem 0;
+  padding: 1rem 0 3rem;
   border-bottom: 1px solid var(--border-color);
 }
 
 h2 {
   font-size: 2.25rem;
   color: var(--bg-dark);
-  margin-top: 0;
+  padding-top: 2rem;
   margin-bottom: 2rem;
   font-weight: 700;
   position: relative;
